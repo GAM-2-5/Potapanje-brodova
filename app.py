@@ -1,3 +1,4 @@
+'''
 brojdimenzija = 0
 
 print('Dozvoljena dimenzija mora biti veća od  0 i manja ili jednaka 10')
@@ -29,10 +30,10 @@ while True:
 
 
 print("")
-
-#brojdimenzija = 3
-#matrica = 25
-#brojbrodova = 3
+'''
+brojdimenzija = 5
+matrica = 25
+brojbrodova = 3
 
 stupci = ['A','B','C','D','E','F','G','H','I','J']
 
@@ -44,19 +45,71 @@ for i in range(brojdimenzija):
 
 #print (polja)
 
-print(" ", end =" ")
 
-for i in range(brojdimenzija): 
+
+
+brodovi = []
+
+brodovi_kompjutora = ['B2', 'C4']
+
+moji_potezi = []
+
+potezi_komputora = []
+
+
+
+
+def print_matrica():
+  print(" ", end =" ")
+
+  #printamo slova od nase matrice
+
+  for i in range(brojdimenzija): 
+      print(stupci[i], end =" ")
+
+  print("   ", end =" ")
+
+  #printamo slova od matrice kompjutora
+
+  for i in range(brojdimenzija): 
     if i == (brojdimenzija - 1):
       print(stupci[i])
     else:
       print(stupci[i], end =" ")
 
-for i in range(brojdimenzija): 
-    print(i + 1)
+  #printamo brojeve i brodove od naše matrice
 
-brodovi = []
+  for i in range(brojdimenzija):
+    print(i + 1, end =" ") 
+    for j in range (brojdimenzija):
+      cell = stupci [j] + str(i + 1)
+      p = ' '
+      if cell in brodovi:
+        p = 'O'
+      if j == (brojdimenzija - 1):
+        print(p)
+      else:
+        print(p, end =" ")
 
+  #printamo pogađanja kompjutora
+
+  for i in range(brojdimenzija):
+    print(i + 1, end =" ") 
+    for j in range (brojdimenzija):
+      cell = stupci [j] + str(i + 1)
+      p = ' '
+      if cell in brodovi:
+        p = 'O'
+      if j == (brojdimenzija - 1):
+        print(p)
+      else:
+        print(p, end =" ")
+
+
+print_matrica()
+
+
+'''
 while len(brodovi) < brojbrodova:
   pozbroda = input('Pozicija broda '+ str (len(brodovi) + 1) + ':')
   if pozbroda in polja:
@@ -64,13 +117,7 @@ while len(brodovi) < brojbrodova:
       print ('odabrali ste već to polje')
     else:
       brodovi.append (pozbroda)
+      print_matrica()
   else:
     print ('Kriva oznaka pozicije, molim pokušajte ponovno')
-
-
-
-
-
-
-
-  
+'''
